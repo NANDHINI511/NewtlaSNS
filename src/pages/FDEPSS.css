@@ -1,0 +1,259 @@
+/* HERO SECTION BACKGROUND WITH ZOOM */
+.heroFeed {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  --hero-bg: url(""); /* fallback */
+}
+
+/* Zoomed image layer */
+.heroFeed::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  animation: zoomInHeroFeed 12s ease forwards;
+  z-index: 1;
+}
+
+@keyframes zoomInHeroFeed {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* DARK OVERLAY CONTENT */
+.heroFeed-overlay {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* HEADING TYPING ANIMATION */
+.animated-heading-heroFeed {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typingHeroFeed 4s steps(30, end) forwards, blinkHeroFeed 0.7s step-end 4;
+}
+
+@keyframes typingHeroFeed {
+  from { width: 0 }
+  to { width:45ch  }
+}
+
+@keyframes blinkHeroFeed {
+  50% { border-color: transparent; }
+}
+
+.animated-heading-heroFeed.typing-done {
+  border-right: none;
+}
+
+/* PARAGRAPH FADE IN */
+.heroFeed-overlay p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  max-width: 700px;
+  opacity: 0;
+  animation: fadeInParaHeroFeed 2s ease-in forwards;
+  animation-delay: 4.2s;
+}
+
+@keyframes fadeInParaHeroFeed {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heroFeed-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.heroFeed-overlay p {
+  font-size: 1.2rem;
+}
+
+.listfeed-infographic {
+  max-width: 1100px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.listfeed-infographic h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #004080;
+}
+
+.timelinefeed {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 40px;
+}
+
+/* Central vertical line */
+.timelinefeed::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ddd;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timelinefeed-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.timelinefeed-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Circle bullets */
+.timelinefeed-item::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+/* Left column bullets */
+.timelinefeed-column.left .timelinefeed-item::before {
+  left: calc(100% + 20px);
+}
+
+/* Right column bullets */
+.timelinefeed-column.right .timelinefeed-item::before {
+  left: -20px;
+}
+
+/* Icon circle */
+.timelinefeed-item .icon {
+  font-size: 60px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+/* .icon{
+   font-size: 50px; 
+} */
+
+/* ================= COLORS ================= */
+.color1 { background: #e74c3c; }
+.color1::before { background: #e74c3c; }
+.color1:hover { background: #c0392b; }
+.color1:hover::before { background: #c0392b; }
+.color1:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color2 { background: #f39c12; }
+.color2::before { background: #f39c12; }
+.color2:hover { background: #d68910; }
+.color2:hover::before { background: #d68910; }
+.color2:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color3 { background: #27ae60; }
+.color3::before { background: #27ae60; }
+.color3:hover { background: #1e8449; }
+.color3:hover::before { background: #1e8449; }
+.color3:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color4 { background: #2980b9; }
+.color4::before { background: #2980b9; }
+.color4:hover { background: #21618c; }
+.color4:hover::before { background: #21618c; }
+.color4:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color5 { background: #8e44ad; }
+.color5::before { background: #8e44ad; }
+.color5:hover { background: #6c3483; }
+.color5:hover::before { background: #6c3483; }
+.color5:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color6 { background: #16a085; }
+.color6::before { background: #16a085; }
+.color6:hover { background: #117864; }
+.color6:hover::before { background: #117864; }
+.color6:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color7 { background: #d35400; }
+.color7::before { background: #d35400; }
+.color7:hover { background: #a04000; }
+.color7:hover::before { background: #a04000; }
+.color7:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color8 { background: #2c3e50; }
+.color8::before { background: #2c3e50; }
+.color8:hover { background: #1a252f; }
+.color8:hover::before { background: #1a252f; }
+.color8:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color9 { background: #9b59b6; }
+.color9::before { background: #9b59b6; }
+.color9:hover { background: #7d3c98; }
+.color9:hover::before { background: #7d3c98; }
+.color9:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color10 { background: #1abc9c; }
+.color10::before { background: #1abc9c; }
+.color10:hover { background: #148f77; }
+.color10:hover::before { background: #148f77; }
+.color10:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color11 { background: #34495e; }
+.color11::before { background: #34495e; }
+.color11:hover { background: #212f3d; }
+.color11:hover::before { background: #212f3d; }
+.color11:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color12 { background: #c0392b; }
+.color12::before { background: #c0392b; }
+.color12:hover { background: #922b21; }
+.color12:hover::before { background: #922b21; }
+.color12:hover .icon { background: rgba(0,0,0,0.2); }
+
+.color13 { background: #7f8c8d; }
+.color13::before { background: #7f8c8d; }
+.color13:hover { background: #5d6d6d; }
+.color13:hover::before { background: #5d6d6d; }
+.color13:hover .icon { background: rgba(0,0,0,0.2); }

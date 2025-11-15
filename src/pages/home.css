@@ -1,0 +1,89 @@
+.service-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  height: 100%; /* makes all cards equal height */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+  background: #024D87;
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 15px rgba(0, 123, 255, 0.25);
+}
+
+.service-card:hover img {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+.service-card .card-body {
+  padding: 12px;
+}
+
+.service-card .card-title {
+  color: #000;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0;
+}
+
+.service-card:hover .card-title {
+  color: #fff;
+}
+
+.corner-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #024D87;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 8px;
+  border-bottom-left-radius: 12px;
+}
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(200%); /* doubled for smooth loop */
+  animation: scroll 20s linear infinite;
+}
+
+.logo {
+  flex: 0 0 auto;
+  width: 150px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+/* Removed hover effect */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,205 @@
+.electrical-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+/* HERO SECTION BACKGROUND WITH ZOOM */
+.hero1 {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+  --hero-bg: url(""); /* fallback */
+}
+
+/* Zoomed image layer */
+.hero1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  animation: zoomInHero1 12s ease forwards;
+  z-index: 1;
+}
+
+@keyframes zoomInHero1 {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* DARK OVERLAY CONTENT */
+.hero1-overlay {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* HEADING TYPING ANIMATION */
+.animated-heading-hero1 {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation: typingHero1 4s steps(30, end) forwards, blinkHero1 0.7s step-end 4;
+}
+
+@keyframes typingHero1 {
+  from { width: 0 }
+  to { width: 28ch }
+}
+
+@keyframes blinkHero1 {
+  50% { border-color: transparent; }
+}
+
+.animated-heading-hero1.typing-done {
+  border-right: none;
+}
+
+/* PARAGRAPH FADE IN */
+.hero1-overlay p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  max-width: 700px;
+  opacity: 0;
+  animation: fadeInParaHero1 2s ease-in forwards;
+  animation-delay: 4.2s;
+}
+
+@keyframes fadeInParaHero1 {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero1-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero1-overlay p {
+  font-size: 1.2rem;
+}
+
+/* Services */
+.services1 {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.services1 h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.services1-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.service1-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.service1-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.service1-card .icon {
+  font-size: 2rem;
+  color: #0066cc;
+  margin-bottom: 1rem;
+}
+.service1-card h3 {
+  margin-bottom: 0.5rem;
+}
+.service1-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  background: #024D87;
+}
+
+.service1-card:hover h3,
+.service1-card:hover p,
+.service1-card:hover .icon {
+  color: #fff;
+}
+/* Timeline */
+.timeline1 {
+  padding: 3rem 2rem;
+  background: #f0f4f8;
+}
+.timeline1 h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.timeline1-container {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 2rem;
+  max-width: 800px;
+}
+.timeline1-item {
+  margin-bottom: 2rem;
+  position: relative;
+}
+.timeline1-dot {
+  width: 15px;
+  height: 15px;
+  background: #0066cc;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 5px;
+}
+.timeline1-content {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.timeline1-content h3 {
+  margin-bottom: 0.5rem;
+  color: #0066cc;
+}
+
+/* CTA */
+.cta {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #024D87;
+  color: #fff;
+}
+.cta-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  border: none;
+  color: #0066cc;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.cta-btn:hover {
+  background: #e6e6e6;
+}

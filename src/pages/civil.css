@@ -1,0 +1,155 @@
+.nsnsgpc-container {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.nsnsgpc-intro h2 {
+  font-size: 2rem;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.nsnsgpc-intro p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.nsnsgpc-intro span {
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.nsnsgpc-expertise h3 {
+  font-size: 1.6rem;
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+.nsnsgpc-expertise ul {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.nsnsgpc-expertise ul li {
+  font-size: 15px;
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+.nsnsgpc-vision-mission {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.vm-card {
+  flex: 1;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.vm-card h4 {
+  font-size: 1.4rem;
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.vm-card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.nsnsgpc-policies h3 {
+  font-size: 1.6rem;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.policy-card {
+  background: #fff;
+  border-left: 6px solid #004080;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.policy-card h5 {
+  font-size: 1.2rem;
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.policy-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.company-highlight {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background: #fdfdfd;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  font-family: 'Segoe UI', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.company-section h2 {
+  font-size: 1.8rem;
+  color: #004080;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.company-section p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.company-section p span {
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.company-section p strong {
+  color: #222;
+  font-weight: 700;
+}
+
+.company-section ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.company-section ul li {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 8px;
+  list-style-type: disc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .company-highlight {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
+}

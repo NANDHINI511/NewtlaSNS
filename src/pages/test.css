@@ -1,0 +1,54 @@
+.scope-timeline-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  gap: 2rem;
+  min-height: 700px;
+}
+
+.scope-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.scope-timeline {
+  position: relative;
+  width: 40px;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scope-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #e3f2fd;
+  border-radius: 3px;
+  transform: translateX(-50%);
+}
+
+.scope-pointer {
+  position: absolute;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  background: #024D87;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(2,77,135,0.15);
+  transform: translate(-50%, 0);
+  transition: top 0.2s;
+  border: 3px solid #fff;
+  z-index: 2;
+}
+
+.service-card.active {
+  box-shadow: 0 4px 24px rgba(2,77,135,0.18);
+  transform: scale(1.03);
+}

@@ -1,0 +1,361 @@
+/* --- HERO RPP --- */
+.heroRpp {
+  position: relative;
+  height: 70vh;
+  overflow: hidden; /* no scrollbars */
+}
+
+.heroRpp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--hero-rpp-bg);
+  transform: scale(1);
+  animation: zoomInHeroRpp 8s ease forwards;
+  z-index: 1;
+}
+
+@keyframes zoomInHeroRpp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.heroRpp-overlay {
+  position: relative;
+  z-index: 2; /* above zoomed background */
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* --- Animated Heading (RPP) --- */
+.animated-heading-rpp {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff; /* typing cursor */
+  width: 0;
+ animation: typingRpp 4s steps(26, end) forwards, blinkRpp 0.7s step-end 4;
+
+}
+
+@keyframes typingRpp {
+  from { width: 0 }
+  to {  width: 24ch;  }
+}
+
+@keyframes blinkRpp {
+  50% { border-color: transparent; }
+}
+.animated-heading.typingRpp-done {
+  border-right: none;
+}
+.heroRpp-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+/* Animated Paragraph (RPP) */
+.animated-para-rpp {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  max-width: 700px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpParaRpp 1.5s ease forwards;
+  animation-delay: 4.2s; /* starts right after heading finishes typing */
+}
+
+@keyframes fadeUpParaRpp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CONTAINER */
+.rpp-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.rpp-title {
+  color: #004080;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.rpp-intro {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+/* SERVICES GRID */
+.rpp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.rpp-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent; /* default border */
+}
+
+/* Hover effect */
+.rpp-card:hover {
+  border: 2px solid #ccc;
+}
+
+
+/* Image styling */
+.rpp-card-img {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid;
+}
+
+.rpp-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Heading styling */
+.rpp-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Paragraph styling */
+.rpp-card p {
+  font-size: 18px;
+  font-weight: 80px;
+  color: #570;
+  line-height: 1.6;
+  font-family: 'italic', sans-serif;
+}
+
+
+/* CARD 0 - Solar */
+.rpp-card-0 {
+  background-color: #fff4e1; /* mild pastel orange */
+  border: 2px solid #f39c12;
+}
+.rpp-card-0 .rpp-card-img {
+  border-color: #f8c291;
+}
+.rpp-card-0 h3 {
+  color: #f39c12;
+  font-weight: 700;
+}
+.rpp-card-0:hover {
+  background-color: #fff8ec;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  border: 2px solid #f39c12;
+}
+.rpp-card-0:hover h3 {
+  color: #d35400;
+}
+.rpp-card-0:hover p {
+  color: #333;
+}
+
+/* CARD 1 - Electrical */
+.rpp-card-1 {
+  background-color: #e6f7fb; /* mild pastel blue */
+  border: 2px solid #3498db;
+}
+.rpp-card-1 .rpp-card-img {
+  border-color: #82ccdd;
+}
+.rpp-card-1 h3 {
+  color: #3498db;
+  font-weight: 700;
+}
+.rpp-card-1:hover {
+  background-color: #f0fbff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  border: 2px solid #3498db;
+}
+.rpp-card-1:hover h3 {
+  color: #2c80b4;
+}
+.rpp-card-1:hover p {
+  color: #333;
+}
+
+/* CARD 2 - Automation */
+.rpp-card-2 {
+  background-color: #f0fbe5; /* mild pastel green */
+  border: 2px solid #27ae60;
+}
+.rpp-card-2 .rpp-card-img {
+  border-color: #b8e994;
+}
+.rpp-card-2 h3 {
+  color: #27ae60;
+  font-weight: 700;
+}
+.rpp-card-2:hover {
+  background-color: #f6fdf0;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  border: 2px solid #27ae60;
+}
+.rpp-card-2:hover h3 {
+  color: #1e8c4d;
+}
+.rpp-card-2:hover p {
+  color: #333;
+}
+
+
+
+/* --- EXPERTISE INFOGRAPHIC --- */
+.rpp-subtitle {
+  font-size: 2rem;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color: #004080;
+  font-weight: 700;
+  text-align: center;
+}
+
+.rpp-expertise {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 per row */
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.expertise-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.expertise-card h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #222;
+  font-weight: 700;
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.expertise-card p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+
+/* Hover effect: background and text color */
+.expertise-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  background-color: #f7faff;
+}
+
+.expertise-card:hover h4 {
+  color: #004080;
+}
+
+.expertise-card:hover p {
+  color: #333;
+}
+
+/* Icon styling */
+.expertise-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #fff;
+}
+
+/* Unique infographic colors */
+.expertise-card:nth-child(1) .expertise-icon { background: #f8c291; }
+.expertise-card:nth-child(2) .expertise-icon { background: #82ccdd; }
+.expertise-card:nth-child(3) .expertise-icon { background: #b8e994; }
+.expertise-card:nth-child(4) .expertise-icon { background: #d3b6e0; }
+.expertise-card:nth-child(5) .expertise-icon { background: #c8d6e5; }
+.expertise-card:nth-child(6) .expertise-icon { background: #f6b1b1; }
+
+/* Heading styling */
+.expertise-card h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #222;
+  font-weight: 700;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Paragraph styling */
+.expertise-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Responsive layout */
+@media (max-width: 992px) {
+  .rpp-expertise {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .rpp-expertise {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,68 @@
+.about-hero {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.about-hero .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.about-hero p {
+  font-size: 1.2rem;
+}
+
+/* Vision & Mission Cards */
+.vision-mission {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.vision-mission h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.vision-mission p {
+  margin-bottom: 2rem;
+}
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  flex: 1 1 300px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: white;
+}
+.vision-card {
+  background: #003366;
+}
+.mission-card {
+  background: #ff6600;
+}
+
+/* Policies Section */
+.policies {
+  background: #f8f9fa;
+  padding: 2rem 1rem;
+  border-top: 1px solid #ddd;
+}
+.policies h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.policies p {
+  color: #333;
+  line-height: 1.6;
+}

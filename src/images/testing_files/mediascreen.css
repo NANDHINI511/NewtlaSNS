@@ -1,0 +1,242 @@
+@media screen and (max-width:1280px){
+    li.specilization_list {
+        width: 235px;
+    }
+}
+@media screen and (max-width:800px){
+    .division_chart_image {
+        display: none;
+    }
+    .sticky1 {
+        top: 86%;
+    }
+    i.fa.fa-whatsapp.whatsappimg {
+        margin-top: 1px;
+    }
+    .cp-widget-button {
+        display: revert;
+        top: 83%;
+    }
+    h2.weare_head {
+        font-size: 24px;
+    }
+
+   .wrapper.sliders {
+    display: revert;
+}
+ul.specilization_order {
+    display: none;
+}
+h1.main_head {
+    font-size: 24px;
+    line-height: 38px;
+}
+
+ul.nav.navbar-nav.center {
+    margin-left: 0px!important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+div#myNavbar {
+    margin-top: 20px;
+}
+nav.navbar.navbar-inverse {
+    height: auto;
+    padding-bottom: 20px;
+}
+ul.nav.navbar-nav.navbar-right {
+    padding-top: 0px;
+    padding-left: 25px;
+}
+ul.dropdown-menu {
+    background: #00203FFF !important;
+}
+.navbar-nav .open .dropdown-menu>li>a {
+    line-height: 32px;
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 10px;
+    color: #fff;
+}
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+    color: #fff;
+}
+ul.dropdown-menu {
+    margin-right: 10px;
+}
+.mission_main {
+    height: auto;
+    display: block;
+    padding: 15px;
+}
+.mission_left {
+    margin-right: 0px;
+}
+.mission_image {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.col-md-5.paddingleft {
+    padding-right: 15px;
+}
+.col-md-7.paddingright {
+    padding-left: 15px;
+}
+.policy_content {
+    padding: 25px 5px;
+}
+.col-md-7.quality {
+    padding-right: 15px;
+}
+.col-md-5.quality {
+    padding-left: 15px;
+}
+.container-fluid.banner.one {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-size: cover;
+    background-position-x: -190px;
+}
+.container-fluid.banner.two,
+.container-fluid.banner.three,
+.container-fluid.banner.four,
+.container-fluid.banner.feed,
+.container-fluid.banner.instrumentation,
+.container-fluid.banner.maintenace,
+.container-fluid.banner.erection,
+.container-fluid.banner.pmc,
+.container-fluid.banner.rpp,
+.container-fluid.banner.testing
+{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-size: cover;
+    background-position-x: -140px;
+}
+h1.banner_heading {
+    font-size: 32px;
+}
+h3.maintenance_head {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.testing_image {
+    margin-top: 15px;
+}
+h4.testing_para {
+    margin-top: 20px;
+}
+h2.ohl_head.liasoning {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+h3.testing_head.liasoning {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.liasoning_image {
+    margin-top: 20px;
+}
+
+
+.container-fluid.ohl {
+    padding-bottom: 0px;
+}
+h2.ohl_head.ev {
+    margin-bottom: 20px;
+}
+p.testing_para.evp {
+    margin-bottom: 20px;
+}
+.container-fluid.banner.three {
+    padding-bottom: 70px;
+    padding-top: 70px;
+    background-size: cover;
+    background-position-x: -320px;
+}
+.container-fluid.banner.four {
+    background-size: cover;
+    padding-bottom: 70px;
+    padding-top: 70px;
+    background-position-x: -248px;
+}
+.contactus_cnt_main {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.navbar-brand>img {
+    padding-left: 0px;
+}
+}
+
+@media screen and (max-width:640px){
+
+
+    .sticky1 {
+        top: 77%;
+    }
+    .cp-widget-button {
+        top: 68%;
+    }
+}
+
+@media screen and (max-width:600px){
+
+    .sticky1 {
+        top: 85%;
+    }
+    .cp-widget-button {
+        top: 82%;
+    }
+
+}
+
+@media screen and (max-width:540px){
+
+    .cp-widget-button {
+        top: 81%;
+    }
+
+}
+
+
+@media screen and (max-width:467px){
+
+    .cp-widget-button {
+        top: 80%;
+    }
+
+}
+
+@media screen and (max-width:412px){
+
+    .sticky1 {
+        top: 83%;
+    }
+    .cp-widget-button {
+        top: 79%;
+    }
+}
+
+@media screen and (max-width:400px){
+
+
+    .sticky1 {
+        top: 78%;
+    }
+    i.fa.fa-whatsapp.whatsappimg {
+        margin-top: 2px;
+        padding-top: 1px;
+    }
+    .cp-widget-button {
+        top: 74%;
+    }
+}
+
+@media screen and (max-width:384px){
+
+
+    .cp-widget-button {
+        top: 74%;
+    }
+}

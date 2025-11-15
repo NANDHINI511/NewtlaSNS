@@ -1,0 +1,319 @@
+/* HERO SECTION BACKGROUND WITH ZOOM */
+.heroIservice {
+  position: relative;
+  height: 70vh; /* adjustable height */
+  overflow: hidden; /* prevent scrollbars */
+  --hero-bg: url(""); /* fallback */
+}
+
+/* zoomed image layer */
+.heroIservice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  animation: zoomInHero 12s ease forwards;
+  z-index: 1;
+}
+
+@keyframes zoomInHero {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* DARK OVERLAY CONTENT */
+.heroIservice-overlay {
+  position: relative;
+  z-index: 2; /* above zoomed image */
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+/* HEADING TYPING ANIMATION */
+.animated-heading-iservice {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff; /* typing cursor */
+  width: 0;
+  animation: typingIs 4s steps(30, end) forwards, blinkIs 0.7s step-end infinite;
+}
+
+@keyframes typingIs {
+  from { width: 0 }
+  to { width: 26ch }
+}
+
+@keyframes blinkIs {
+  50% { border-color: transparent; }
+}
+
+.animated-heading-iservice.typing-done {
+  border-right: none; /* stop blinking */
+}
+
+
+
+/* Animated Paragraph (iservice) */
+.animated-para-iservice {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  max-width: 700px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpParaiservice 1.5s ease forwards;
+  animation-delay: 4.2s; /* starts right after heading finishes typing */
+}
+@keyframes fadeUpParaiservice {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInPara {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.heroIservice {
+  position: relative;
+  height: 70vh;
+  overflow: hidden; /* prevent scrollbars */
+}
+
+.heroIservice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: inherit; /* will take inline style bg */
+  transform: scale(1);
+  animation: zoomInHero 8s ease forwards;
+  z-index: 1;
+}
+
+@keyframes zoomInHero {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.heroIservice-overlay {
+  position: relative;
+  z-index: 2; /* above zoomed image */
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.heroIservice-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.heroIservice-overlay p {
+  font-size: 1.2rem;
+}
+.insinfographic-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.insinfographic-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.insinfographic-col {
+  flex: 1;
+}
+
+.insinfographic-image img {
+  width: 100%;
+  max-width: 1500px;   /* increase this value to make it bigger */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional hover zoom */
+.insinfographic-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 64, 128, 0.35);
+}
+.insinfographic-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.insinfographic-item1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  color: #333;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  /* Flat left, rounded right */
+  border-top-right-radius: 50px;   /* top right curve */
+  border-bottom-right-radius: 50px; /* bottom right curve */
+  border-top-left-radius: 0;  /* keep flat */
+  border-bottom-left-radius: 0; /* keep flat */
+
+  background: #fff; /* just to make it look neat */
+}
+.insinfographic-item2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  color: #333;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  /* Flat left, rounded right */
+  border-top-left-radius: 50px;   /* top right curve */
+  border-bottom-left-radius: 50px; /* bottom right curve */
+  border-top-right-radius: 0;  /* keep flat */
+  border-bottom-right-radius: 0; /* keep flat */
+
+  background: #fff; /* just to make it look neat */
+}
+
+
+.insinfographic-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.insinfographic-content p {
+  margin-top: 8px;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.insinfographic-icon {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  color: #004080;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  margin-left: 20px;
+}
+/* Default gradients */
+.theme-gradient-0 {
+  background: linear-gradient(135deg, #004080, #0059b3);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.theme-gradient-1 {
+  background: linear-gradient(135deg, #004080, #0073e6);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.theme-gradient-2 {
+  background: linear-gradient(135deg, #004080, #3399ff);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.theme-gradient-0:hover {
+  background: linear-gradient(135deg, #0059b3, #004080);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 64, 128, 0.4);
+}
+
+.theme-gradient-1:hover {
+  background: linear-gradient(135deg, #0073e6, #004080);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 64, 128, 0.4);
+}
+
+.theme-gradient-2:hover {
+  background: linear-gradient(135deg, #3399ff, #004080);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 64, 128, 0.4);
+}
+
+/* Pastel color themes */
+.pastel-0 {
+  background-color: #d0ebff; /* pastel blue */
+}
+.pastel-1 {
+  background-color: #ffe5b4; /* pastel orange */
+}
+.pastel-2 {
+  background-color: #ffccd5; /* pastel red */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .insinfographic-row,
+  .insinfographic-row.reverse {
+    flex-direction: column;
+  }
+
+  .insinfographic-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .insinfographic-icon {
+    margin-left: 10px;
+  }
+}
