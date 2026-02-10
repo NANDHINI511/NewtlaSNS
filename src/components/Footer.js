@@ -1,8 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const [status, setStatus] = useState("");
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("Sending...");
+
+  try {
+    const response = await fetch("http://localhost:5000/enquiry", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("Thank you! We will contact you soon.");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setStatus("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    setStatus("Server error. Please try later.");
+  }
+};
+
   return (
     <footer className="bg-light text-dark pt-5">
       <div className="container">
@@ -75,44 +115,65 @@ const Footer = () => {
           </div>
 
           {/* Enquiry Box */}
-          <div className="col-12 col-md-3">
-            <h6 className="fw-bold mb-3">Enquiry</h6>
-            <form>
-              <div className="mb-2">
-                <input
-                  type="text"
-                  className="form-control form-control-sm"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div className="mb-2">
-                <input
-                  type="email"
-                  className="form-control form-control-sm"
-                  placeholder="Your Email"
-                />
-              </div>
-              <div className="mb-2">
-                <textarea
-                  className="form-control form-control-sm"
-                  placeholder="Message"
-                  rows="2"
-                ></textarea>
-              </div>
-              <button
-  type="submit"
-  className="btn"
-  style={{
-    backgroundColor: "#024D87",
-    color: "white",
-    border: "none",
-  }}
->
-  Submit
-</button>
+        {/* Enquiry Box */}
+<div className="col-12 col-md-3">
+  <h6 className="fw-bold mb-3">Enquiry</h6>
 
-            </form>
-          </div>
+  <form onSubmit={handleSubmit}>
+    <div className="mb-2">
+      <input
+        type="text"
+        name="name"
+        className="form-control form-control-sm"
+        placeholder="Your Name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+      />
+    </div>
+
+    <div className="mb-2">
+      <input
+        type="email"
+        name="email"
+        className="form-control form-control-sm"
+        placeholder="Your Email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+      />
+    </div>
+
+    <div className="mb-2">
+      <textarea
+        name="message"
+        className="form-control form-control-sm"
+        placeholder="Message"
+        rows="2"
+        value={formData.message}
+        onChange={handleChange}
+        required
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      className="btn btn-sm w-100"
+      style={{
+        backgroundColor: "#024D87",
+        color: "white",
+        border: "none",
+      }}
+    >
+      Submit
+    </button>
+
+    {status && (
+      <p className="mt-2 small text-muted">{status}</p>
+    )}
+  </form>
+</div>
+
         </div>
       </div>
 
